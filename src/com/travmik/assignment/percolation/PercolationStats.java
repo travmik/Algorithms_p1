@@ -4,6 +4,7 @@ import com.travmik.utils.StdRandom;
 import com.travmik.utils.StdStats;
 
 public class PercolationStats {
+    private double factor = 1.96;
     private final int number;
     private double[] results;
 
@@ -44,20 +45,21 @@ public class PercolationStats {
     }
 
     public double confidenceLo() {
-        return mean() - stddev();
+        return mean() - (factor*stddev()/Math.sqrt(results.length));
     }
 
     public double confidenceHi() {
-        return mean() + stddev();
+        return mean() + (factor*stddev()/Math.sqrt(results.length));
     }
 
     public static void main(String[] args) {
-        int N, T;
         PercolationStats p;
+        int N, T;
         N = Integer.parseInt(args[0]);
         T = Integer.parseInt(args[1]);
         p = new PercolationStats(N, T);
-        System.out.println("mean   = " + p.mean());
-        System.out.println("stddev = " + p.stddev());
+        System.out.println("mean                    = " + p.mean());
+        System.out.println("stddev                  = " + p.stddev());
+        System.out.println("95% confidence interval = " + p.confidenceLo() + ", " + p.confidenceHi());
     }
 }

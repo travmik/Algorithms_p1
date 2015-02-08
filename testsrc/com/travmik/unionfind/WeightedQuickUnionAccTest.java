@@ -10,7 +10,7 @@ public class WeightedQuickUnionAccTest {
     @Test
     public void acceptanceTest() throws Exception {
         int[] ref = {6, 2, 6, 4, 6, 6, 6, 2, 4, 4};
-        MyWeightedQuickUnionUF wQuickUnion = new MyWeightedQuickUnionUF(10);
+        WeightedQuickUnionUF wQuickUnion = new WeightedQuickUnionUF(10);
         wQuickUnion.union(4, 3);
         wQuickUnion.union(3, 8);
         wQuickUnion.union(6, 5);

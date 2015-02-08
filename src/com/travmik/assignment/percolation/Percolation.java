@@ -13,7 +13,7 @@ public class Percolation {
      * @param N - number of sites
      */
     public Percolation(final int N) {
-        if (N < 0) {
+        if (N <= 0) {
             throw new IllegalArgumentException(String.format("Number of sites '%s' should be greater then 0", N));
         }
         numSites = N;
