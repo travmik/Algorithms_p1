@@ -1,4 +1,4 @@
-package com.travmik.stack;
+package com.travmik.stackNqueue;
 
 public class LinkedStackOfStrings {
     private Node firstNode;

@@ -1,5 +1,5 @@
 import com.travmik.unionfind.QuickFindUF;
-import com.travmik.unionfind.MyWeightedQuickUnionUF;
+import com.travmik.unionfind.WeightedQuickUnionUF;
 
 public class Main {
 
@@ -23,7 +23,7 @@ public class Main {
     }
 
     private void quickUnionTest1() {
-        MyWeightedQuickUnionUF quickUnion = new MyWeightedQuickUnionUF(10);
+        WeightedQuickUnionUF quickUnion = new WeightedQuickUnionUF(10);
         quickUnion.union(1, 9);
         quickUnion.union(2, 4);
         quickUnion.union(4, 0);
