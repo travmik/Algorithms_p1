@@ -1,3 +1,6 @@
+import com.travmik.elementarysort.InsertionSort;
+import com.travmik.elementarysort.SelectionSort;
+import com.travmik.elementarysort.ShellSort;
 import com.travmik.unionfind.QuickFindUF;
 import com.travmik.unionfind.WeightedQuickUnionUF;
 
@@ -7,8 +10,10 @@ public class Main {
 //        Main test = new Main();
 //        test.quickFindTest();
 //        test.quickUnionTest1();
-        test();
+        insertionSort();
+//        shellSort();
     }
+
 
     private void quickFindTest() {
         QuickFindUF find = new QuickFindUF(10);
@@ -56,5 +61,23 @@ public class Main {
         if ((double) realIndex / numSites <= numSites - 1) {
             System.out.println("bottom");
         }
+    }
+
+    private static void selectionSort() {
+        Integer[] a = {64, 81, 75, 18, 29, 85, 39, 47, 15, 63};
+        SelectionSort instance = new SelectionSort(a);
+        instance.sort();
+    }
+
+    private static void insertionSort() {
+        Integer[] a = {11, 14, 27, 79, 98, 59, 13, 72, 52, 99};
+        InsertionSort instance = new InsertionSort(a);
+        instance.sort();
+    }
+
+    private static void shellSort() {
+        Integer[] a = {68, 83, 58, 53, 19, 30, 77, 47, 90, 24};
+        ShellSort instance = new ShellSort(a);
+        instance.sort();
     }
 }
