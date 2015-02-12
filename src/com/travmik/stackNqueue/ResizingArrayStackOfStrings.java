@@ -19,7 +19,7 @@ public class ResizingArrayStackOfStrings {
 
     public String pop() {
         String item = stack[--index];
-        if(index <= stack.length/4){
+        if (index <= stack.length / 4) {
             resize(stack.length/2);
         }
         return item;
